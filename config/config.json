@@ -1,0 +1,39 @@
+{
+  "specialization": {},
+  "middleware": {
+    "static": {
+      "module": {
+        "arguments": [
+          "path:./.build"
+        ]
+      }
+    },
+    "router": {
+      "module": {
+        "arguments": [{
+          "directory": "path:./app/controllers"
+        }]
+      }
+    },
+    "authentication": {
+      "enabled": true,
+      "priority": 100,
+      "route": "\/api\/v1((?!$))((?!\/root\/))((?!\/updates))((?!\/users\/register))((?!\/users\/forgot-password))((?!\/users\/sign-in))((?!\/users\/sign-up))((?!\/admin\/sign-in))((?!\/admin\/create))((?!\/users\/social-login))((?!\/dicom))((?!\/opentok))((?!\/categories))((?!\/browse-s3))((?!\/menu))*",
+      "module": {
+        "name": "path:./app/lib/auth"
+      }
+    }
+  },
+  "app": {
+    "url": "",
+    "jwtSecret": "estadioSecret"
+  },
+  "gmail": {
+    "service": "gmail",
+    "transportMethod": "SMTP",
+    "auth": {
+      "user": "estadioapp@gmail.com",
+      "pass": "estadio#Pass123"
+    }
+  }
+}
