@@ -7,6 +7,11 @@ var FacilityModel = function () {
   var schema = mongoose.Schema({
       userId: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
       facilityName: {type: String, default: ""},
+      stadiumCount: {type: Number, default: ""},
+      address: {type: String, default: ""},
+      contractType: {type: String, default: ""},
+      email: {type: String, default: ""},
+      contractFile: {type: String, default: ""},
       facilityCount: {type: Number, default: 0},
       country: {type: String, default: ""},
       location: {

@@ -15,6 +15,11 @@ var UsersModel = function () {
 
   var usersSchema = mongoose.Schema({
       name: {type: String, default: ""},
+      userName: {type: String, default: ""},
+      enterpriseName: {type: String, default: ""},
+      profileImageUrl: {type: String, default: ""},
+      mobileNo: {type: String, default: ""},
+      alternativeMobNo: {type: String, default: ""},
       role: {type: String, enum: ['admin', 'facilityOwner']},
       email: {
         type: String,
