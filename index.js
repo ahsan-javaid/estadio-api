@@ -28,6 +28,14 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 
 app.use('/files', express.static('files'));
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
+  customCss: '.swagger-ui .topbar { display: none }'
+} ));
+
+
 app.use(bodyParser.json({limit: '10mb'}));
 app.use(bodyParser.urlencoded({extended: false}));
 
