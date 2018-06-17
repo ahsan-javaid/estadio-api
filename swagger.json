@@ -1,0 +1,164 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Facility management system",
+    "version": "1.0.0",
+    "title": "Estadio"
+  },
+  "host": "",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "Admin",
+      "description": "Everything about admin"
+    },
+    {
+      "name": "Facility",
+      "description": "Everything about facility"
+    }
+  ],
+  "schemes": [
+    "http"
+  ]
+  ,
+  "paths": {
+    "/api/v1/admin/create": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Create new admin",
+        "description": "Create new admin",
+        "parameters": [
+          {
+            "in": "body",
+            "name":"admin",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type":"string"
+                },
+                "email": {
+                  "type":"string"
+                },
+                "password": {
+                  "type":"string"
+                }
+              }
+            }
+          }
+        ]
+        ,
+        "responses":{ }
+      }
+    },
+    "/api/v1/admin/sign-in": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Admin Login",
+        "description": "Admin Login",
+        "parameters": [
+          {
+            "in": "body",
+            "name":"admin",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type":"string"
+                },
+                "password": {
+                  "type":"string"
+                }
+              }
+            }
+          }
+        ]
+      ,
+        "responses":{ }
+      }
+    },
+    "/api/v1/facility": {
+      "get": {
+        "tags": [
+          "Facility"
+        ],
+        "summary": "Get list of all facilities",
+        "description": "Get list of all facilities",
+        "parameters": [
+          {
+            "in": "query",
+            "name":"limit",
+            "type": "number",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name":"offset",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      ,
+        "responses":{ }
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "tags": [
+          "Facility"
+        ],
+        "summary": "Get list of all facility users",
+        "description": "Get list of all facility users",
+        "parameters": [
+          {
+            "in": "query",
+            "name":"limit",
+            "type": "number",
+            "required": false
+          },
+          {
+            "in": "query",
+            "name":"offset",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      ,
+        "responses":{ }
+      }
+    }
+  }
+  ,
+  "definitions": {
+    "Admin": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
