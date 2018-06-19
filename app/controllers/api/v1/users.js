@@ -102,4 +102,18 @@ module.exports =  (router) => {
 
   });
 
+  router.put('/:id', (req, res) => {
+    db.Users.findOneAndUpdate({_id: req.params.id},req.body, {new: true}).then((user) => {
+      res.json({
+        status: {
+          code: 200,
+          message: "user updated"
+        },
+        body: {
+          user: user
+        }
+      })
+    });
+  });
+
 };

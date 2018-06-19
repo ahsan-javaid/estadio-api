@@ -112,6 +112,113 @@
         "responses":{ }
       }
     },
+    "/api/v1/facility": {
+      "post": {
+        "tags": [
+          "Facility"
+        ],
+        "summary": "Create facilities",
+        "description": "Create facilities",
+        "parameters": [
+          {
+            "in": "body",
+            "name":"facility",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type":"string"
+                },
+                "password": {
+                  "type":"string"
+                },
+                "userId": {
+                  "type":"string"
+                },
+                "facilityName": {
+                  "type":"string"
+                },
+                "stadiumCount":{
+                  "type":"number"
+                },
+                "address":{
+                  "type":"string"
+                },
+                "contractType":{
+                  "type":"string"
+                },
+                "email":{
+                  "type":"string"
+                },
+                "contractFile":{
+                  "type":"string"
+                },
+                "facilityCount": {
+                  "type":"number"
+                },
+                "country": {
+                  "type":"string"
+                },
+                "picture": {
+                  "type":"string"
+                },
+                "city": {
+                  "type":"string"
+                },
+                "accountNumber": {
+                  "type":"string"
+                },
+                "phoneNumber": {
+                  "type":"string"
+                },
+                "mobileNumber": {
+                  "type":"string"
+                },
+                "otherContactNumber": {
+                  "type":"string"
+                },
+                "website":{
+                  "type":"string"
+                },
+                "facebook":{
+                  "type":"string"
+                },
+                "twitter": {
+                  "type":"string"
+                },
+                "instagram": {
+                  "type":"string"
+                },
+                "snapchat": {
+                  "type":"string"
+                },
+                "companyLogo": {
+                  "type":"string"
+                },
+                "contractDetails": {
+                  "type":"string"
+                },
+                "packageType": {
+                  "type":"string"
+                },
+                "bankName": {
+                  "type":"string"
+                },
+                "location": {
+                  "type": "object",
+                  "properties": {
+                    "type":"string",
+                    "coordinates":"array"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses":{ }
+      }
+    }
+    ,
     "/api/v1/users": {
       "get": {
         "tags": [

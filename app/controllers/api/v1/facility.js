@@ -38,11 +38,31 @@ module.exports =  (router) => {
     });
   });
 
-  router.put('/', (req, res) => {
-
+  router.put('/:id', (req, res) => {
+    db.Facility.findOneAndUpdate({_id: req.params.id},req.body, {new: true}).then((facility) => {
+      res.json({
+        status: {
+          code: 200,
+          message: "facility updated"
+        },
+        body: {
+          facility: facility
+        }
+      })
+    });
   });
 
-  router.delete('/', (req, res) => {
-
+  router.delete('/:id', (req, res) => {
+    db.Facility.remove({_id: req.params.id}).then((facility) => {
+      res.json({
+        status: {
+          code: 200,
+          message: "facility removed"
+        },
+        body: {
+          facility: facility
+        }
+      })
+    });
   });
 };
