@@ -39,6 +39,7 @@ module.exports =  (router) => {
   });
 
   router.put('/:id', (req, res) => {
+    delete req.body._id;
     db.Facility.findOneAndUpdate({_id: req.params.id},req.body, {new: true}).then((facility) => {
       res.json({
         status: {
